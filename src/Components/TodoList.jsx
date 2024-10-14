@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './TodoList.css';
 
 const TodoList = () => {
-  
+
 
   return (
     <>
@@ -18,7 +18,8 @@ const TodoList = () => {
           <button className="add-list-button">Add Heading</button>
         </div>
       </div>
-      <div className="todo_main">
+
+      <div className="todo_main"> // section intended to show the TO-DO Items
         
       </div>
     </>
