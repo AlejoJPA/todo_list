@@ -30,6 +30,7 @@ const TodoList = () => {
       newTodos[index].lists.push(listInputs[index]); 
       setTodos(newTodos);
       setListInputs({ ...listInputs, [index]: '' });
+    }
   };
 
   return (
