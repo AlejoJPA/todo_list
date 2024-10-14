@@ -24,6 +24,14 @@ const TodoList = () => {
     setTodos(newTodos);
   };
 
+  const handleAddList = (index) => {
+    if (listInputs[index] && listInputs[index].trim() !== '') { 
+      const newTodos = [...todos]; 
+      newTodos[index].lists.push(listInputs[index]); 
+      setTodos(newTodos);
+      setListInputs({ ...listInputs, [index]: '' });
+  };
+
   return (
     <>
       <div className="todo-container">
@@ -46,6 +54,16 @@ const TodoList = () => {
             <div className="heading_todo">
               <h3>{todo.heading}</h3>
               <button className="delete-button-heading" onClick={() => handleDeleteTodo(index)}>Delete Heading</button>
+            </div>
+
+            <div className='add_list'>
+              <input 
+                type= "text"
+                className="list-input"
+                placeboholder="Add List"
+                value={listInputs[index] || ''}
+                onChange={(e) => handleListInputChange(index, e.target.value)}/>
+              <button className="add-list-button" onClick={() => handleAddList(index)}>Add List</button>
             </div>
 
               
