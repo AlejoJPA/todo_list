@@ -62,7 +62,8 @@ const TodoList = () => {
             </div>
             <ul>
               {todo.lists.map((list, listIndex) => (
-              <li key={listIndex} className='todo_inside_list'> <p>{list}</p>
+              <li key={listIndex} className='todo_inside_list'> 
+                <p>{list}</p>
               </li> ))}
             </ul>
             
@@ -70,7 +71,8 @@ const TodoList = () => {
                 <input
                   type= "test" className="list-input" placeholder='Add List'
                   value={listInputs[index] || ''}
-                  onChange={(e) => handleListInputChange(index, e.target.value)}/>
+                  onChange={(e) => handleListInputChange(index, e.target.value)}
+                />
                 <button className = "add-list-button" onClick={() => handleAddList(index)}>Add List</button>
             </div>
         
