@@ -13,7 +13,7 @@ const TodoList = () => {
 
   const handleAddTodo = () => { 
     if (headingInput.trim() !== '') {
-      setTodos([...todos, {heading: headingInput, list: []}]);
+      setTodos([...todos, {heading: headingInput, lists: []}]);
       setHeadingInput('');
     }
   };
@@ -62,7 +62,7 @@ const TodoList = () => {
             </div>
             
             <ul>
-              {todo.list.map((list, listIndex) => (
+              {todo.lists.map((list, listIndex) => (
                 <li key={listIndex} className='todo_inside_list'>
                   <p>{list}</p>
                 </li>
@@ -73,7 +73,7 @@ const TodoList = () => {
               <input 
                 type= "text"
                 className="list-input"
-                placeboholder="Add List"
+                placeholder="Add List"
                 value={listInputs[index] || ''}
                 onChange={(e) => handleListInputChange(index, e.target.value)}/>
               <button className="add-list-button" onClick={() => handleAddList(index)}>Add List</button>
